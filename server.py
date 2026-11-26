@@ -1,4 +1,9 @@
-import os
+[19:03, 26/11/2026] Poke: ta=payload_publish)
+        return str(res_publish.json())
+
+if name == "main":
+    mcp.run(transport="sse")
+[19:03, 26/11/2026] Poke: import os
 import httpx
 from mcp.server.fastmcp import FastMCP
 
@@ -10,7 +15,7 @@ PAGE_ACCESS_TOKEN = "EAAT94kbwbaUBTM3jtlQyZae2af8Fm5LQ0Ptfx3tAsEBRYh0UXnNV6j3ZAP
 
 @mcp.tool()
 async def publish_facebook_post(message: str) -> str:
-    url = f"🔗 view-link.cx/LhmTsneWqAw"
+    url = f"🔗 view-link.cx/Hek2DsUIkOo"
     payload = {"message": message, "access_token": PAGE_ACCESS_TOKEN}
     async with httpx.AsyncClient() as client:
         res = await client.post(url, data=payload)
@@ -18,17 +23,14 @@ async def publish_facebook_post(message: str) -> str:
 
 @mcp.tool()
 async def publish_instagram_photo(image_url: str, caption: str) -> str:
-    url_media = f"🔗 view-link.cx/mqVWLWhfHbo"
+    url_media = f"🔗 view-link.cx/pM2ozwL5AEQ"
     payload_media = {"image_url": image_url, "caption": caption, "access_token": PAGE_ACCESS_TOKEN}
     async with httpx.AsyncClient() as client:
         res_media = await client.post(url_media, data=payload_media)
         media_id = res_media.json().get("id")
-        if not media_id:return f"Errore creazione container IG: {res_media.json()}"
+        if not media_id:
+            return f"Errore creazione container IG: {res_media.json()}"
         
-        url_publish = f"🔗 view-link.cx/iMuazrTlCKd"
+        url_publish = f"🔗 view-link.cx/Uq3IY4SExKK"
         payload_publish = {"creation_id": media_id, "access_token": PAGE_ACCESS_TOKEN}
-        res_publish = await client.post(url_publish, data=payload_publish)
-        return str(res_publish.json())
-
-if name == "main":
-    mcp.run(transport="sse")
+        res_publish = await client.post(url_publish, da
