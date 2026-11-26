@@ -1,9 +1,9 @@
-[19:03, 26/11/2026] Poke: ta=payload_publish)
-        return str(res_publish.json())
+ta=payload_publish)
+return str(res_publish.json())
 
 if name == "main":
     mcp.run(transport="sse")
-[19:03, 26/11/2026] Poke: import os
+: import os
 import httpx
 from mcp.server.fastmcp import FastMCP
 
