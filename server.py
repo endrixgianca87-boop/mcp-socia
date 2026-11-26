@@ -1,7 +1,7 @@
 [19:03, 26/11/2026] Poke: ta=payload_publish)
         return str(res_publish.json())
 
-if name == "main":
+if __name__ == "main":
     mcp.run(transport="sse")
 [19:03, 26/11/2026] Poke: import os
 import httpx
